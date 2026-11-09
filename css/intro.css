@@ -1,0 +1,43 @@
+/* Primex — intro video splash (home page only).
+   Video file: assets/videos/intro.mp4
+   --intro-w   : how wide the video is on screen (smaller number = smaller video).
+                 JS also keeps it within ~86% of the screen height (landscape phones, short windows).
+   --intro-bg  : fallback backdrop (JS auto-matches it to the video's own top/bottom colours) */
+:root{--intro-bg:#6f7074;--intro-w:min(58vw,1000px);--intro-feather:12%}
+@media (max-width:1100px){:root{--intro-w:80vw}}
+@media (max-width:700px){:root{--intro-w:100vw}}   /* phones: full width, edges still feather */
+
+.intro{display:none}
+html.intro-on{overflow:hidden}
+html.intro-on .intro{display:block;position:fixed;inset:0;z-index:99999;background:var(--intro-bg);transition:opacity .45s ease}
+html.intro-on .intro.fade{opacity:0;pointer-events:none}
+html.intro-on .intro.open{pointer-events:none}
+
+/* video sits centred and its edges fade softly into the backdrop */
+.intro-video{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:var(--intro-w);max-width:100%;height:auto;display:block;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 var(--intro-feather),#000 calc(100% - var(--intro-feather)),transparent 100%),linear-gradient(to bottom,transparent 0,#000 var(--intro-feather),#000 calc(100% - var(--intro-feather)),transparent 100%);
+  -webkit-mask-composite:source-in;
+          mask-image:linear-gradient(to right,transparent 0,#000 var(--intro-feather),#000 calc(100% - var(--intro-feather)),transparent 100%),linear-gradient(to bottom,transparent 0,#000 var(--intro-feather),#000 calc(100% - var(--intro-feather)),transparent 100%);
+          mask-composite:intersect}
+
+/* the two halves that slide apart (canvases hold the frozen frame + backdrop) */
+.intro-half{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;visibility:hidden;
+  transition:transform 1.05s cubic-bezier(.76,0,.24,1);will-change:transform}
+.intro-left{left:0}
+.intro-right{right:0}
+.intro-half canvas{position:absolute;top:0;width:200%;height:100%;display:block}
+.intro-left canvas{left:0}
+.intro-right canvas{right:0}
+.intro.split .intro-half{visibility:visible}
+.intro.split .intro-video{visibility:hidden}
+.intro.open .intro-left{transform:translateX(-101%)}
+.intro.open .intro-right{transform:translateX(101%)}
+
+.intro-skip{position:absolute;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));min-height:40px;z-index:2;padding:9px 18px;border:1px solid rgba(255,255,255,.5);border-radius:999px;
+  background:rgba(0,0,0,.35);color:#fff;font:600 .8rem/1 var(--font-body,system-ui,sans-serif);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+  backdrop-filter:blur(4px);transition:background .2s,border-color .2s}
+.intro-skip:hover,.intro-skip:focus-visible{background:rgba(0,0,0,.6);border-color:#fff;outline:none}
+.intro.split .intro-skip{display:none}
+
+@media (prefers-reduced-motion:reduce){html.intro-on .intro{display:none!important}}
+@media (max-width:600px){.intro-skip{padding:11px 20px;font-size:.78rem}}

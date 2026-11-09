@@ -1,0 +1,77 @@
+@media (max-width:1100px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}
+  .nav-link{padding:10px 8px;font-size:.86rem}
+}
+@media (max-width:1100px){
+  .nav-toggle{display:block}
+  .nav-cta{display:none}
+  .nav-menu{position:fixed;inset:0 0 0 auto;width:min(86vw,380px);background:#fff;flex-direction:column;align-items:stretch;padding:96px 24px 32px;gap:0;overflow-y:auto;transform:translateX(100%);transition:transform .35s ease;box-shadow:var(--shadow-lg);z-index:150;visibility:hidden}
+  .nav-menu.open{transform:none;visibility:visible}
+  .nav-menu>li{border-bottom:1px solid var(--border-color)}
+  .nav-link{width:100%;justify-content:space-between;padding:16px 4px;font-size:1rem}
+  .nav-link::after{display:none}
+  .dropdown{position:static;box-shadow:none;border-top:0;opacity:1;visibility:visible;transform:none;max-height:0;overflow:hidden;padding:0;transition:max-height .35s;background:var(--background-soft)}
+  .has-dropdown:hover>.dropdown{max-height:0}
+  .has-dropdown.open>.dropdown{max-height:520px}
+  .has-dropdown:focus-within>.dropdown{max-height:0}
+  .has-dropdown.open:focus-within>.dropdown{max-height:520px}
+  .nav-menu .mobile-cta{display:block;padding:20px 0}
+  .nav-menu .mobile-cta .btn{width:100%}
+  .nav-scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:99;opacity:0;visibility:hidden;transition:opacity .3s}
+  .nav-scrim.show{opacity:1;visibility:visible}
+  .nav-menu>li.nav-close-wrap{display:block;position:absolute;top:16px;right:16px;border:0}
+  .nav-close{width:44px;height:44px;border:0;border-radius:50%;background:var(--background-soft);display:grid;place-items:center;cursor:pointer;transition:background .25s}
+  .nav-close:hover{background:var(--brand-light)}
+  .nav-close svg{width:20px;height:20px;stroke:var(--brand-secondary);fill:none;stroke-width:2.4;stroke-linecap:round}
+  .split,.qr-split{grid-template-columns:1fr;gap:var(--s4)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+.nav-close-wrap{display:none}
+@media (min-width:1101px){.mobile-cta{display:none}.nav-scrim{display:none}}
+@media (max-width:640px){
+  .container{width:min(100% - 32px,var(--container))}
+  .section{padding:var(--s5) 0}
+  .grid-2,.grid-3,.grid-4,.flow,.form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .hero-actions .btn{width:100%}
+  .filter-bar,.tools{flex-direction:column;align-items:stretch}.tools input,.tools select{min-width:0;width:100%}
+  .form-card{padding:var(--s3)}
+  .gallery-thumbs{grid-template-columns:repeat(4,1fr);gap:8px}
+  .fab{width:46px;height:46px}.fab-social{left:12px;bottom:16px}.fab-top{right:12px;bottom:16px}
+}
+@media (max-width:360px){h1{font-size:2rem}.btn{padding:12px 16px}}
+@media (max-width:1100px){
+  :root{--header-h:72px}
+  .header-inner{align-items:center;gap:12px}
+  .logo-box{min-height:72px;margin-bottom:0;padding:8px 16px;box-shadow:none}
+  .logo-box img{height:44px}
+  .site-header.scrolled .logo-box{min-height:64px;margin-bottom:0}
+  .utility{display:none}
+  .header-right{align-items:flex-end}
+  .nav-row{min-height:72px}
+  .site-header{box-shadow:0 2px 12px rgba(0,0,0,.08)}
+}
+@media (max-width:1440px) and (min-width:1101px){.utility-info .hide-md{display:none}.site-search input{width:160px}}
+@media (max-width:640px){
+  .slide-content{padding:40px 0 150px}
+  .slide .hero-actions .btn{width:100%}
+  .hero-controls{bottom:22px}
+  .hero-controls .hero-controls-inner{width:fit-content;max-width:calc(100% - 32px);margin-left:16px;margin-right:auto;padding:5px 7px;gap:2px}
+  .hc-btn{width:38px;height:38px}.dot{width:22px;height:38px}.dot.active::before{width:22px}
+}
+@media (max-width:1440px) and (min-width:1101px){
+  .nav-link{padding:10px 7px;font-size:.78rem}.nav-link::after{left:7px;right:7px}
+  .nav-cta{padding:8px 14px}.header-inner{gap:16px}.logo-box{padding:10px 22px}
+}
+/* desktop nav stays visible down to 1101px: tighter spacing between 1101 and 1280 */
+@media (max-width:1280px) and (min-width:1101px){
+  .header-inner.container{width:min(100% - 24px,1360px);gap:12px}
+  .logo-box{padding:10px 18px}
+  .nav-row{gap:6px;padding-left:0}
+  .nav-link{padding:10px 6px;font-size:.74rem;letter-spacing:0}
+  .nav-link::after{left:6px;right:6px}
+  .nav-cta{padding:10px 14px;font-size:.8rem;white-space:nowrap}
+  .site-search input{width:130px}
+  .utility-info .hide-md{display:none}
+}

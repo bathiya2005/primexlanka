@@ -1,0 +1,22 @@
+/* Primex — "Under Maintenance" pages (about, products, sustainability, contact) */
+.mt{display:flex;align-items:center;justify-content:center;min-height:calc(100svh - 160px);padding:var(--s6) 0 var(--s5);background:var(--background-soft)}
+.mt-card{max-width:640px;margin-inline:auto;padding:56px 40px;text-align:center;background:#fff;border:1px solid var(--border-color);border-radius:20px;box-shadow:var(--shadow)}
+.mt-icon{width:88px;height:88px;margin:0 auto 20px;border-radius:50%;background:var(--brand-light);display:grid;place-items:center}
+.mt-icon svg{width:44px;height:44px;fill:none;stroke:var(--brand-primary);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.mt-gear{transform-box:fill-box;transform-origin:center;animation:mt-spin 10s linear infinite}
+@keyframes mt-spin{to{transform:rotate(360deg)}}
+.mt-tag{display:inline-block;margin-bottom:14px;padding:6px 14px;border-radius:99px;background:var(--brand-light);color:var(--brand-dark);font-family:var(--font-head);font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+.mt-card h1{font-size:clamp(1.7rem,4.2vw,2.5rem);margin-bottom:16px}
+.mt-card p{color:var(--text-secondary);max-width:46ch;margin-inline:auto}
+.mt-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:28px}
+.mt-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 26px;border-radius:var(--radius);border:2px solid transparent;font-family:var(--font-head);font-weight:700;font-size:.95rem;text-decoration:none;transition:background .25s,color .25s,border-color .25s,transform .25s}
+.mt-btn-primary{background:var(--brand-primary);color:#fff}
+.mt-btn-primary:hover{background:var(--brand-dark);transform:translateY(-2px)}
+.mt-btn-ghost{border-color:#29358E;color:#29358E;background:transparent}
+.mt-btn-ghost:hover{background:#29358E;color:#fff}
+@media (max-width:640px){
+  .mt{padding:var(--s5) 0 var(--s4)}
+  .mt-card{padding:40px 22px}
+  .mt-actions{flex-direction:column}.mt-btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.mt-gear{animation:none}}
