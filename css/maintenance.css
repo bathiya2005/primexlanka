@@ -1,5 +1,5 @@
 /* Primex — "Under Maintenance" pages (about, products, sustainability, contact) */
-.mt{display:flex;align-items:center;justify-content:center;min-height:calc(100svh - 160px);padding:var(--s6) 0 var(--s5);background:var(--background-soft)}
+.mt{display:flex;align-items:center;justify-content:center;min-height:60vh;min-height:calc(100svh - 160px);padding:var(--s6) 0 var(--s5);background:var(--background-soft)}
 .mt-card{max-width:640px;margin-inline:auto;padding:56px 40px;text-align:center;background:#fff;border:1px solid var(--border-color);border-radius:20px;box-shadow:var(--shadow)}
 .mt-icon{width:88px;height:88px;margin:0 auto 20px;border-radius:50%;background:var(--brand-light);display:grid;place-items:center}
 .mt-icon svg{width:44px;height:44px;fill:none;stroke:var(--brand-primary);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
