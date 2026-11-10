@@ -80,3 +80,8 @@
   .site-search input{width:130px}
   .utility-info .hide-md{display:none}
 }
+/* Phones / small tablets: hero no longer fills the whole screen on tall phones; Sustainability image sits under the text */
+@media (max-width:900px){
+  .hero-slider{min-height:560px;min-height:clamp(560px,78vh,720px);min-height:clamp(560px,78svh,720px)}
+  .sx-visual{order:2;margin-top:var(--s2)}
+}
