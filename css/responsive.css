@@ -51,6 +51,11 @@
   .header-right{align-items:flex-end}
   .nav-row{min-height:72px}
   .site-header{box-shadow:0 2px 12px rgba(0,0,0,.08)}
+  /* Home on phones/tablets: no white band over the hero - only logo + menu icon (turns normal once scrolled) */
+  html.has-hero .site-header:not(.scrolled){box-shadow:none}
+  html.has-hero .site-header:not(.scrolled)::before{background:linear-gradient(180deg,rgba(10,14,22,.5) 0%,rgba(10,14,22,0) 100%);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+  html.has-hero .site-header:not(.scrolled) .logo-box{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+  html.has-hero .site-header:not(.scrolled) .nav-toggle span{background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.4)}
 }
 @media (max-width:1440px) and (min-width:1101px){.utility-info .hide-md{display:none}.site-search input{width:160px}}
 @media (max-width:640px){
